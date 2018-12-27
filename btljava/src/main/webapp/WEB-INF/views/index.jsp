@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-jdgcjkglkjglkjgol
+	<h2>Bang chủ đã test</h2>
 </body>
 </html>
