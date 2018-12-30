@@ -98,11 +98,77 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="col-md-9">
+						<div class="checkout-page">
+							<ol class="checkout-steps">
+								<li class="steps active"><a href="checkout.html"
+									class="step-title"> Thêm thông báo </a>
+									<div class="step-description">
+										<div class="row">
+											<b><font color="red">${result }</font></b>
+											<div class="col-md-12">
+												<form
+													action="${pageContext.request.contextPath }/admin/addslide"
+													method="post" enctype="multipart/form-data">
+
+													<div class="form-group">
+														<label for="tde">Tiêu đề</label> <input
+															class="form-control" name="slideContent" type="text"
+															required id="tde">
+													</div>
+													<div class="form-group">
+														<label for="ct">Nội dung</label>
+														<textarea rows="" cols="" id="ct" class="form-control"
+															name="slideTitle" required></textarea>
+													</div>
+													<div>
+														<label for="img">Hình ảnh</label> <input type="file"
+															id="img" class="form-control" name="img">
+													</div>
+													<div class="form-group">
+														<button type="submit" class="btn-primary">Thêm</button>
+													</div>
+												</form>
+											</div>
+
+
+										</div>
+									</div></li>
+								<li class="steps active"><a href="checkout.html"
+									class="step-title"> Danh sách thông báo </a>
+									<div class="step-description">
+										<div class="row">
+
+											<div class="col-md-12">
+												<c:forEach items="${slides }" var="slide">
+													<div class="media border p-3">
+														<img
+															src="${pageContext.request.contextPath }/images/${slide.slideImage}"
+															alt="John Doe" class="mr-3 mt-3 rounded-circle"
+															style="width: 60px;">
+														<div class="media-body">
+															<h4>${slide.slideTitle }</h4>
+															<p>${slide.slideContent}.</p>
+														</div>
+													</div>
+												</c:forEach>
+											</div>
+
+
+										</div>
+									</div></li>
+							</ol>
+						</div>
+					</div>
 				</div>
+				<div class="clearfix"></div>
+
 			</div>
 		</div>
+	</div>
 
-		<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 </body>
 </html>

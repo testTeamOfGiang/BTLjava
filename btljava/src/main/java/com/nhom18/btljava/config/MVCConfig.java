@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.nhom18.btljava.controller.AdminInterceptor;
+import com.nhom18.btljava.controller.MainInterceptor;
 
 @Configuration
 @EnableWebMvc
@@ -26,5 +27,6 @@ public class MVCConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/admin/*");
+		registry.addInterceptor(new MainInterceptor()).addPathPatterns("/*");
 	}
 }
