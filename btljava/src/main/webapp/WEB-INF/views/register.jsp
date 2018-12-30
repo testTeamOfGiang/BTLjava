@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@
 <link href='<c:url value='/resources/css/sequence-looptheme.css'/>'
 	rel="stylesheet" media="all" />
 <link href='<c:url value='/resources/css/style.css'/>' rel="stylesheet">
-<title>home page</title>
+<title>register page</title>
 </head>
 <body>
 	<div class="wrapper">
@@ -105,7 +105,7 @@
 							<ol class="checkout-steps">
 
 								<li class="steps active"><a class="step-title">
-										Register </a>
+										Register </a> <b><font color="red">${result }</font></b>
 									<div class="step-description">
 										<form action="register" method="post">
 											<div class="row">
@@ -116,25 +116,29 @@
 															<label class="lebel-abs"> First Name <strong
 																class="red"> * </strong>
 															</label> <input type="text" class="input namefild"
-																name="userFirstName">
+																name="userFirstName" required pattern="[a-zA-Z]{1,20}"
+																title="từ 1-20 ký tự">
 														</div>
 														<div class="form-row">
 															<label class="lebel-abs"> Last Name <strong
 																class="red"> * </strong>
 															</label> <input type="text" class="input namefild"
-																name="userLastName">
+																name="userLastName" required pattern="[a-zA-Z]{1,20}"
+																title="1-20 ký tự">
 														</div>
 														<div class="form-row">
 															<label class="lebel-abs"> Email <strong
 																class="red"> * </strong>
 															</label> <input type="text" class="input namefild"
-																name="userEmail">
+																name="userEmail" required
+																pattern="^[a-z_.%+-]{5-15}@\.[a-z.]{2-13}$"
+																title="vui lòng điền đúng định dạng email">
 														</div>
 														<div class="form-row">
 															<label class="lebel-abs"> Telephone <strong
 																class="red"> * </strong>
 															</label> <input type="text" class="input namefild"
-																name="userPhone">
+																name="userPhone" required pattern="[0-9]{5,11}">
 														</div>
 
 
@@ -160,13 +164,13 @@
 																<label class="lebel-abs"> Your Password <strong
 																	class="red"> * </strong>
 																</label> <input type="password" class="input namefild"
-																	name="userPassword">
+																	name="userPassword" required pattern="[a-z0-9]{5,20}">
 															</div>
 															<div class="form-row">
 																<label class="lebel-abs"> Confird Your Password
 																	<strong class="red"> * </strong>
 																</label> <input type="password" class="input cpass"
-																	name="confirm">
+																	name="confirm" required>
 															</div>
 														</div>
 														<div class="form-row">
@@ -176,7 +180,7 @@
 																name="userAddress">
 														</div>
 
-														
+
 
 														<p class="privacy">
 															<span class="input-radio"> <input type="radio"
@@ -185,7 +189,7 @@
 																<a href="#" class="red"> Privacy Policy </a>
 															</span>
 														</p>
-														<button>register</button>
+														<input type="submit" value="register">
 													</div>
 												</div>
 											</div>

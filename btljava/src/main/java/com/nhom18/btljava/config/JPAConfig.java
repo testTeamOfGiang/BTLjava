@@ -1,5 +1,7 @@
 package com.nhom18.btljava.config;
 
+import java.util.Properties;
+
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
@@ -30,10 +32,13 @@ public class JPAConfig {
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
+		Properties prop=new Properties();
+		prop.put("hibernate.show_sql",true);
 		entityManagerFactory.setDataSource(dataSource());
 		entityManagerFactory.setPackagesToScan("com.nhom18.btljava.model");
 		entityManagerFactory.setJpaDialect(new HibernateJpaDialect());
 		entityManagerFactory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+		entityManagerFactory.setJpaProperties(prop);
 		return entityManagerFactory;
 	}
 

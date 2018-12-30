@@ -23,25 +23,25 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
-	@Column
+	@Column(name = "user_firstname")
 	private String userFirstName;
-	@Column
+	@Column(name = "user_lastname")
 	private String userLastName;
-	@Column
+	@Column(name = "user_email")
 	private String userEmail;
-	@Column
+	@Column(name = "user_phone")
 	private String userPhone;
-	@Column
+	@Column(name = "user_password")
 	private String userPassword;
-	@Column
+	@Column(name = "user_address")
 	private String userAddress;
-	@Column
+	@Column(name = "verify_token")
 	private String userToken;
 	@OneToMany(mappedBy = "user")
 	private List<Cart> carts;
-	
+
 	public User() {
-		
+
 	}
 
 	public int getUserId() {
@@ -115,8 +115,5 @@ public class User implements Serializable {
 	public void setCarts(List<Cart> carts) {
 		this.carts = carts;
 	}
-	
-	
-	
 
 }
