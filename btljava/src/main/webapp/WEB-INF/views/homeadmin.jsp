@@ -34,6 +34,70 @@
 	<div class="wrapper">
 		<jsp:include page="header.jsp"></jsp:include>
 		<div class="clearfix"></div>
+
+		<div class="container_fullwidth">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="product-tag leftbar" style="margin-top: 0;">
+							<h4 class="title">
+								<strong> Quản lý nội dung </strong>
+							</h4>
+							<ul>
+								<li><a>Thông báo sự kiện</a></li>
+								<li><a>Thông tin liên hệ</a></li>
+							</ul>
+						</div>
+						<div class="product-tag leftbar">
+							<h3 class="title">
+								<strong>Quản lý Hàng hóa</strong>
+							</h3>
+							<ul>
+								<li><a href="#">Danh sách hàng hóa</a></li>
+								<li><a href="#"> Danh sách đơn nhập </a></li>
+								<li><a href="#"> Màu sắc sản phẩm </a></li>
+							</ul>
+						</div>
+						<div class="get-newsletter leftbar">
+							<h3 class="title">
+								Get <strong> newsletter </strong>
+							</h3>
+							<p>Casio G Shock Digital Dial Black.</p>
+							<form>
+								<input class="email" type="text" name=""
+									placeholder="Your Email..."> <input class="submit"
+									type="submit" value="Submit">
+							</form>
+						</div>
+						<div class="fbl-box leftbar">
+							<h3 class="title">Facebook</h3>
+							<span class="likebutton"> <a href="#"> <img
+									src="images/fblike.png" alt="">
+							</a>
+							</span>
+							<p>12k people like Flat Shop.</p>
+							<ul>
+								<li><a href="#"> </a></li>
+								<li><a href="#"> </a></li>
+								<li><a href="#"> </a></li>
+								<li><a href="#"> </a></li>
+								<li><a href="#"> </a></li>
+								<li><a href="#"> </a></li>
+								<li><a href="#"> </a></li>
+								<li><a href="#"> </a></li>
+							</ul>
+							<div class="fbplug">
+								<a href="#"> <span> <img src="images/fbicon.png"
+										alt="">
+								</span> Facebook social plugin
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 </body>

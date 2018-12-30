@@ -7,13 +7,21 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class CheckLoginInterceptor extends HandlerInterceptorAdapter {
+public class AdminInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		
-		return super.preHandle(request, response, handler);
+
+		HttpSession session = request.getSession();
+		if (session.getAttribute("user") == null) {
+			response.sendRedirect(request.getContextPath() + "/login");
+		} else {
+			if (!session.getAttribute("type").equals("employee")) {
+				response.sendRedirect(request.getContextPath() + "/403");
+			}
+		}
+		return true;
 	}
 
 	@Override
@@ -26,8 +34,6 @@ public class CheckLoginInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		HttpSession session = request.getSession();
-		session.setAttribute("test", "xong");
 		super.postHandle(request, response, handler, modelAndView);
 	}
 }

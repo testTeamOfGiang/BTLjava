@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.nhom18.btljava.controller.CheckLoginInterceptor;
+import com.nhom18.btljava.controller.AdminInterceptor;
 
 @Configuration
 @EnableWebMvc
@@ -25,6 +25,6 @@ public class MVCConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new CheckLoginInterceptor()).addPathPatterns("/*");
+		registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/admin/*");
 	}
 }

@@ -10,4 +10,9 @@ public class HomeController {
 	public String home() {
 		return "home";
 	}
+
+	@GetMapping(value = "/403")
+	public String fail() {
+		return "403";
+	}
 }

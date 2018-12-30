@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/nhom18/btljava/controller/LoginController.java=UTF-8
 encoding//src/main/java/com/nhom18/btljava/controller/RegisterController.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/403.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/register.jsp=UTF-8
