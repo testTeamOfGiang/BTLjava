@@ -17,9 +17,20 @@
 						<div class="col-md-6"></div>
 						<div class="col-md-3">
 							<ul class="usermenu">
-								<li><a href="${pageContext.request.contextPath }/login"
-									class="log">Login</a></li>
-								<li><a href="checkout2.html" class="reg">Register</a></li>
+								<c:if test="${empty sessionScope.user}">
+									<li><a href="${pageContext.request.contextPath }/login"
+										class="log">Login</a></li>
+									<li><a href="${pageContext.request.contextPath }/register"
+										class="reg">Register</a></li>
+								</c:if>
+								<c:if test="${not empty sessionScope.user}">
+									<c:if test="${sessionScope.type eq'user' }">
+										<li><a>hi ${sessionScope.user.userFirstName }</a></li>
+									</c:if>
+									<c:if test="${sessionScope.type eq 'employee' }">
+										<li><a>${sessionScope.user.employeeName }</a></li>
+									</c:if>
+								</c:if>
 							</ul>
 						</div>
 					</div>

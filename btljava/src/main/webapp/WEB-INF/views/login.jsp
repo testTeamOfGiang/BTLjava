@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
 <link href='<c:url value='/resources/css/sequence-looptheme.css'/>'
 	rel="stylesheet" media="all" />
 <link href='<c:url value='/resources/css/style.css'/>' rel="stylesheet">
-<title>${test }</title>
+<title>login page</title>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
 </script>
@@ -114,42 +114,34 @@
 									class="step-title"> Login </a>
 									<div class="step-description">
 										<div class="row">
+											<b><font color="red">${result }</font></b>
 											<div class="col-md-6 col-sm-6">
 												<div class="new-customer">
-													<h5>New Customer</h5>
-													<label> <span class="input-radio"> <input
-															type="radio" name="user">
-													</span> <span class="text"> I wish to subscribe to the
-															Herbal Store newsletter. </span>
-													</label> <label> <span class="input-radio"> <input
-															type="radio" name="user">
-													</span> <span class="text"> My delivery and billing
-															addresses are the same. </span>
-													</label>
-													<p class="requir">By creating an account you will be
-														able to shop faste be up to date on an order's status, and
-														keep track of the orders you have previously made.</p>
-													<button>Continue</button>
+													<h5>Nếu chưa có tài khoản, hãy đăng ký</h5>
+													<a><button>Đến trang đăng ký</button></a>
 												</div>
 											</div>
 											<div class="col-md-6 col-sm-6">
 												<div class="run-customer">
 													<h5>Rerunning Customer</h5>
-													<form>
+													<form action="${pageContext.request.contextPath }/login"
+														method="post">
 														<div class="form-row">
 															<label class="lebel-abs"> Email <strong
 																class="red"> * </strong>
-															</label> <input type="text" class="input namefild" name="">
+															</label> <input type="text" class="input namefild" name="email"
+																required>
 														</div>
 														<div class="form-row">
 															<label class="lebel-abs"> Password <strong
 																class="red"> * </strong>
-															</label> <input type="text" class="input namefild" name="">
+															</label> <input type="text" class="input namefild"
+																name="password" required>
 														</div>
 														<p class="forgoten">
-															<a href="#"> Forgoten your password? </a>
+															<a href="#"> Quên mật khẩu? </a>
 														</p>
-														<button>Login</button>
+														<button>Đăng nhập</button>
 													</form>
 												</div>
 											</div>
