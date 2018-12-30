@@ -13,22 +13,12 @@
 			<div class="col-md-10 col-sm-10">
 				<div class="header_top">
 					<div class="row">
-						<div class="col-md-3">
-							
-						</div>
-						<div class="col-md-6">
-							<ul class="topmenu">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">News</a></li>
-								<li><a href="#">Service</a></li>
-								<li><a href="#">Recruiment</a></li>
-								<li><a href="#">Media</a></li>
-								<li><a href="#">Support</a></li>
-							</ul>
-						</div>
+						<div class="col-md-3"></div>
+						<div class="col-md-6"></div>
 						<div class="col-md-3">
 							<ul class="usermenu">
-								<li><a href="checkout.html" class="log">Login</a></li>
+								<li><a href="${pageContext.request.contextPath }/login"
+									class="log">Login</a></li>
 								<li><a href="checkout2.html" class="reg">Register</a></li>
 							</ul>
 						</div>

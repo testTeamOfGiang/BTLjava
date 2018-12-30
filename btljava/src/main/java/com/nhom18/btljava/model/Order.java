@@ -3,6 +3,7 @@ package com.nhom18.btljava.model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * The persistent class for the orders database table.
@@ -25,6 +26,9 @@ public class Order implements Serializable {
 
 	@Column(name = "order_check")
 	private boolean orderCheck;
+
+	@OneToMany(mappedBy = "order")
+	private List<ProductDetail> productDetails;
 
 	private String phone;
 
@@ -80,6 +84,14 @@ public class Order implements Serializable {
 
 	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	public List<ProductDetail> getProductDetails() {
+		return productDetails;
+	}
+
+	public void setProductDetails(List<ProductDetail> productDetails) {
+		this.productDetails = productDetails;
 	}
 
 }

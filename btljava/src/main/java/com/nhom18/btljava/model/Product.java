@@ -32,6 +32,9 @@ public class Product implements Serializable {
 	@OneToMany(mappedBy = "product")
 	private List<ProductDetail> productDetails;
 
+	@OneToMany(mappedBy = "product")
+	private List<Import> imports;
+
 	@Column(name = "product_amount")
 	private int productAmount;
 
@@ -141,6 +144,14 @@ public class Product implements Serializable {
 
 	public void setProductDetails(List<ProductDetail> productDetails) {
 		this.productDetails = productDetails;
+	}
+
+	public List<Import> getImports() {
+		return imports;
+	}
+
+	public void setImports(List<Import> imports) {
+		this.imports = imports;
 	}
 
 }

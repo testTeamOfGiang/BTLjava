@@ -7,7 +7,8 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="footer-logo">
-						<a href="#"><img src="images/logo.png" alt=""></a>
+						<a href="#"><img
+							src='<c:url value='/resources/images/logo.png'/>' alt=""></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -76,3 +77,4 @@
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript"
 	src='<c:url value='/resources/js/script.min.js'/>'></script>
+<script defer src='<c:url value='/resources/js/jquery.flexslider.js'/>'></script>
