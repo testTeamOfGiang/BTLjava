@@ -13,6 +13,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 @Configuration
 @EnableJpaRepositories(basePackages = { "com.nhom18.btljava.dao" })
@@ -32,8 +33,8 @@ public class JPAConfig {
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
-		Properties prop=new Properties();
-		prop.put("hibernate.show_sql",true);
+		Properties prop = new Properties();
+		prop.put("hibernate.show_sql", true);
 		entityManagerFactory.setDataSource(dataSource());
 		entityManagerFactory.setPackagesToScan("com.nhom18.btljava.model");
 		entityManagerFactory.setJpaDialect(new HibernateJpaDialect());
@@ -45,6 +46,13 @@ public class JPAConfig {
 	@Bean
 	public JpaTransactionManager transactionManager() {
 		return new JpaTransactionManager(entityManagerFactory().getObject());
+	}
+
+	@Bean
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+		resolver.setMaxUploadSize(1000000);
+		return resolver;
 	}
 
 }

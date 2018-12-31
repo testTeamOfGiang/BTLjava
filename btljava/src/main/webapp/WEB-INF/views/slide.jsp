@@ -22,6 +22,8 @@
 <link href='<c:url value='/resources/css/sequence-looptheme.css'/>'
 	rel="stylesheet" media="all" />
 <link href='<c:url value='/resources/css/style.css'/>' rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>admin page</title>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
@@ -108,19 +110,19 @@
 										<div class="row">
 											<b><font color="red">${result }</font></b>
 											<div class="col-md-12">
-												<form
+												<form name="f1" id="f1"
 													action="${pageContext.request.contextPath }/admin/addslide"
 													method="post" enctype="multipart/form-data">
 
 													<div class="form-group">
 														<label for="tde">Tiêu đề</label> <input
-															class="form-control" name="slideContent" type="text"
+															class="form-control" name="slideTitle" type="text"
 															required id="tde">
 													</div>
 													<div class="form-group">
 														<label for="ct">Nội dung</label>
 														<textarea rows="" cols="" id="ct" class="form-control"
-															name="slideTitle" required></textarea>
+															name="slideContent" required></textarea>
 													</div>
 													<div>
 														<label for="img">Hình ảnh</label> <input type="file"
@@ -170,5 +172,22 @@
 
 	<jsp:include page="footer.jsp"></jsp:include>
 	</div>
+
+	<script type="text/javascript">
+		function send() {
+			var f = $('#f1')[0];
+			var formData = new FormData(f);
+			$.ajax({
+				data : formData,
+				processData : false,
+				contentType : false,
+				url : 'upload',
+				type : 'POST',
+				success : function(result) {
+					alert(result);
+				}
+			});
+		}
+	</script>
 </body>
 </html>

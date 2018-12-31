@@ -24,7 +24,7 @@
 <link href='<c:url value='/resources/css/style.css'/>' rel="stylesheet">
 <title>home page</title>
 </head>
-<body>
+<body id="home">
 	<div class="wrapper">
 		<jsp:include page="header.jsp"></jsp:include>
 		<div class="clearfix"></div>
@@ -42,9 +42,7 @@
 					<ul class="sequence-canvas">
 						<c:forEach items="${slides }" var="slide">
 							<li class="animate-in">
-								<div class="flat-caption caption1 formLeft delay300 text-center">
-									<span class="suphead">Paris show 2014</span>
-								</div>
+
 								<div class="flat-caption caption2 formLeft delay400 text-center">
 									<h1>${slide.slideTitle }</h1>
 								</div>
@@ -71,18 +69,20 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<div class="promo-box">
-								<img src="images/promotion-01.png" alt="">
+								<img src='<c:url value='/resources/images/promotion-01.png'/>'
+									alt="">
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<div class="promo-box">
-								<img src="images/promotion-02.png" alt="">
+								<img src='<c:url value='/resources/images/promotion-02.png'/>'
+									alt="">
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<div class="promo-box">
-								<img src="images/pro
-                           motion-03.png"
+								<img
+									src='<c:url value='/resources/images/promotion-03.png'/>'
 									alt="">
 							</div>
 						</div>
