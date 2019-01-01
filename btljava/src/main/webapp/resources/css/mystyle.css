@@ -1,0 +1,19 @@
+.slide {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.slide-left {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 65px;
+}
+
+.slide-right {
+	padding-left: 20px;
+	flex-grow: 1;
+	width: 60%;
+	flex-grow: 1;
+}

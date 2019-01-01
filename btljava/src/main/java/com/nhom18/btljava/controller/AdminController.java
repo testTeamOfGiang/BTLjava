@@ -42,11 +42,11 @@ public class AdminController {
 	public String slide(Model model, @ModelAttribute("slide") Slide slide, @RequestParam("img") MultipartFile img) {
 		String updirname = context.getRealPath("images");
 		System.out.println(updirname);
-		model.addAttribute("slides", slideDao.findAll());
 		File updir = new File(updirname);
 		if (!updir.exists()) {
 			updir.mkdirs();
 		}
+		model.addAttribute("slides", slideDao.findAll());
 		File newfile = new File(updirname + "/" + img.getOriginalFilename());
 		if (newfile.exists()) {
 			model.addAttribute("result", "file đã tồn tại");
@@ -64,7 +64,7 @@ public class AdminController {
 		}
 		slide.setSlideImage(img.getOriginalFilename());
 		slideDao.save(slide);
-
+		model.addAttribute("slides", slideDao.findAll());
 		System.out.println("slide title: " + slide.getSlideTitle());
 		System.out.println("slide content: " + slide.getSlideContent());
 		model.addAttribute("result", "thêm thành công");

@@ -25,7 +25,15 @@
 								</c:if>
 								<c:if test="${not empty sessionScope.user}">
 									<c:if test="${sessionScope.type eq'user' }">
-										<li><a>hi ${sessionScope.user.userFirstName }</a></li>
+										<li class="dropdown"><a class="dropdown-toggle">hi
+												${sessionScope.user.userFirstName }</a>
+											<div class="dropdown-menu">
+												<ul class="mega-menu-links">
+													<li><a href="index.html">logout</a></li>
+													<li><a href="home2.html">cart</a></li>
+
+												</ul>
+											</div></li>
 									</c:if>
 									<c:if test="${sessionScope.type eq 'employee' }">
 										<li><a>${sessionScope.user.employeeName }</a></li>
@@ -45,52 +53,7 @@
 									type="text" value="" name="search">
 							</form>
 						</li>
-						<li class="option-cart"><a href="#" class="cart-icon">cart
-								<span class="cart_no">02</span>
-						</a>
-							<ul class="option-cart-item">
-								<li>
-									<div class="cart-item">
-										<div class="image">
-											<img src="images/products/thum/products-01.png" alt="">
-										</div>
-										<div class="item-description">
-											<p class="name">Lincoln chair</p>
-											<p>
-												Size: <span class="light-red">One size</span><br>Quantity:
-												<span class="light-red">01</span>
-											</p>
-										</div>
-										<div class="right">
-											<p class="price">$30.00</p>
-											<a href="#" class="remove"><img src="images/remove.png"
-												alt="remove"></a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="cart-item">
-										<div class="image">
-											<img src="images/products/thum/products-02.png" alt="">
-										</div>
-										<div class="item-description">
-											<p class="name">Lincoln chair</p>
-											<p>
-												Size: <span class="light-red">One size</span><br>Quantity:
-												<span class="light-red">01</span>
-											</p>
-										</div>
-										<div class="right">
-											<p class="price">$30.00</p>
-											<a href="#" class="remove"><img src="images/remove.png"
-												alt="remove"></a>
-										</div>
-									</div>
-								</li>
-								<li><span class="total">Total <strong>$60.00</strong></span>
-									<button class="checkout"
-										onClick="location.href='checkout.html'">CheckOut</button></li>
-							</ul></li>
+
 					</ul>
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse"

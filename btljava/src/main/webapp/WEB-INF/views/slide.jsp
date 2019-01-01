@@ -31,6 +31,8 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js">
 </script>
 <![endif]-->
+<link rel="stylesheet"
+	href='<c:url value='/resources/css/mystyle.css'/>'>
 </head>
 <body>
 	<div class="wrapper">
@@ -129,6 +131,7 @@
 															id="img" class="form-control" name="img">
 													</div>
 													<div class="form-group">
+
 														<button type="submit" class="btn-primary">Thêm</button>
 													</div>
 												</form>
@@ -144,13 +147,16 @@
 
 											<div class="col-md-12">
 												<c:forEach items="${slides }" var="slide">
-													<div class="media border p-3">
-														<img
-															src="${pageContext.request.contextPath }/images/${slide.slideImage}"
-															alt="John Doe" class="mr-3 mt-3 rounded-circle"
-															style="width: 60px;">
-														<div class="media-body">
-															<h4>${slide.slideTitle }</h4>
+
+
+													<div class="slide">
+														<div class="slide-left">
+															<img
+																src="${pageContext.request.contextPath }/images/${slide.slideImage}"
+																class="media-object" style="width: 100%">
+														</div>
+														<div class="slide-right">
+															<h4 class="media-heading">${slide.slideTitle }</h4>
 															<p>${slide.slideContent}.</p>
 														</div>
 													</div>
