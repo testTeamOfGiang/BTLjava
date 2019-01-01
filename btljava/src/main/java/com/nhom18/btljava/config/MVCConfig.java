@@ -24,7 +24,6 @@ public class MVCConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
-	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/admin/*");
 		registry.addInterceptor(new MainInterceptor()).addPathPatterns("/*");

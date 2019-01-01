@@ -3,29 +3,29 @@ package com.nhom18.btljava.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
 /**
  * The persistent class for the slide database table.
  * 
  */
 @Entity
-@NamedQuery(name="Slide.findAll", query="SELECT s FROM Slide s")
+@Table(name = "slide")
+@NamedQuery(name = "Slide.findAll", query = "SELECT s FROM Slide s")
 public class Slide implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="slide_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "slide_id")
 	private int slideId;
 
 	@Lob
-	@Column(name="slide_content")
+	@Column(name = "slide_content")
 	private String slideContent;
 
-	@Column(name="slide_image")
+	@Column(name = "slide_image")
 	private String slideImage;
 
-	@Column(name="slide_title")
+	@Column(name = "slide_title")
 	private String slideTitle;
 
 	public Slide() {

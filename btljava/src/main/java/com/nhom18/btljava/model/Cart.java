@@ -8,6 +8,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(name = "cart")
 @NamedQuery(name = "Cart.findAll", query = "SELECT c FROM Cart c")
 public class Cart implements Serializable {
 	private static final long serialVersionUID = 1L;

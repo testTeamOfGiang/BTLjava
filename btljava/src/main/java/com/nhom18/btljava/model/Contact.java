@@ -3,19 +3,19 @@ package com.nhom18.btljava.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
 /**
  * The persistent class for the contact database table.
  * 
  */
 @Entity
-@NamedQuery(name="Contact.findAll", query="SELECT c FROM Contact c")
+@Table(name = "contact")
+@NamedQuery(name = "Contact.findAll", query = "SELECT c FROM Contact c")
 public class Contact implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="contact_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "contact_id")
 	private int contactId;
 
 	private String address;

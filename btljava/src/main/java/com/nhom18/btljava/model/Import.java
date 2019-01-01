@@ -8,6 +8,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(name = "import")
 @NamedQuery(name = "Import.findAll", query = "SELECT i FROM Import i")
 public class Import implements Serializable {
 	private static final long serialVersionUID = 1L;
