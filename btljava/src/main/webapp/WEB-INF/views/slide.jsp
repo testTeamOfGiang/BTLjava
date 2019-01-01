@@ -173,21 +173,5 @@
 	<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 
-	<script type="text/javascript">
-		function send() {
-			var f = $('#f1')[0];
-			var formData = new FormData(f);
-			$.ajax({
-				data : formData,
-				processData : false,
-				contentType : false,
-				url : 'upload',
-				type : 'POST',
-				success : function(result) {
-					alert(result);
-				}
-			});
-		}
-	</script>
 </body>
 </html>

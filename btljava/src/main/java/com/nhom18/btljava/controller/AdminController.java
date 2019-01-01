@@ -39,9 +39,10 @@ public class AdminController {
 	}
 
 	@PostMapping(value = "/addslide")
-	public String slide(Model model, @ModelAttribute("slide") Slide slide, @RequestParam("img")MultipartFile img) {
+	public String slide(Model model, @ModelAttribute("slide") Slide slide, @RequestParam("img") MultipartFile img) {
 		String updirname = context.getRealPath("images");
 		System.out.println(updirname);
+		model.addAttribute("slides", slideDao.findAll());
 		File updir = new File(updirname);
 		if (!updir.exists()) {
 			updir.mkdirs();
@@ -66,8 +67,7 @@ public class AdminController {
 
 		System.out.println("slide title: " + slide.getSlideTitle());
 		System.out.println("slide content: " + slide.getSlideContent());
-		model.addAttribute("slides", slideDao.findAll());
-		model.addAttribute("result","thêm thành công");
+		model.addAttribute("result", "thêm thành công");
 		return "slide";
 	}
 }

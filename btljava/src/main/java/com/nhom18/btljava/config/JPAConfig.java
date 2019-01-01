@@ -24,7 +24,7 @@ public class JPAConfig {
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/btljava");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/btljava?characterEncoding=UTF-8");
 		dataSource.setUsername("root");
 		dataSource.setPassword("huylam98");
 		return dataSource;
